@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="از میان هجوم دشمنان فرار کن، انرژی جمع کن و در بازی سریع مدارشکن رکورد بزن.">
+  <title>مدارشکن — بازی نئونی بقا</title>
+  <link rel="stylesheet" href="/app/globals.css">
+</head>
+<body>
+  <main>
+    <header class="site-header">
+      <a class="brand" href="#game" aria-label="صفحهٔ اصلی مدارشکن"><span class="brand-mark">م</span><span>مدارشکن</span></a>
+      <div class="header-actions">
+        <span class="live-pill"><i></i> سامانه آماده است</span>
+        <button id="soundButton" class="icon-button" aria-label="قطع صدای بازی">صدا روشن</button>
+      </div>
+    </header>
+
+    <section class="hero" id="game">
+      <div class="hero-copy">
+        <p class="eyebrow">پیامی از آخرین میدان</p>
+        <h1>مدار را<br><em>بشکن.</em></h1>
+        <p class="lede">از میان هجوم دشمنان عبور کن، هسته‌های انرژی را بگیر و پیش از بسته‌شدن مدار، موج انفجاری را آزاد کن.</p>
+        <div class="hero-actions">
+          <button id="heroStart" class="primary-button">ورود به میدان <span>↖</span></button>
+          <a href="#brief" class="text-link">راهنمای زنده‌ماندن <span>↓</span></a>
+        </div>
+      </div>
+
+      <div class="game-shell">
+        <div class="game-topbar">
+          <div><small>امتیاز</small><strong id="score">۰</strong></div>
+          <div><small>رکورد</small><strong id="best">۰</strong></div>
+          <div><small>رتبه</small><strong id="rank" class="acid">تازه‌کار</strong></div>
+          <button id="pauseButton" class="pause-button" disabled>توقف</button>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="arena" width="960" height="600" aria-label="میدان بازی مدارشکن"></canvas>
+          <div id="introOverlay" class="game-overlay">
+            <p class="overlay-kicker">پیام شمارهٔ ۰۰۱</p>
+            <h2>همیشه حرکت کن.</h2>
+            <p>چهار هستهٔ سبز بگیر تا موجت شارژ شود. برخورد با هر تکهٔ صورتی یک سپر کم می‌کند.</p>
+            <button id="overlayStart" class="primary-button compact">شروع بازی <span>↖</span></button>
+            <span class="shortcut">اینتر یا فاصله را بزن</span>
+          </div>
+          <div id="pauseOverlay" class="game-overlay pause-overlay" hidden>
+            <p class="overlay-kicker">سیگنال متوقف شد</p><h2>توقف.</h2>
+            <button id="overlayResume" class="primary-button compact">ادامه <span>▶</span></button>
+          </div>
+          <div id="gameoverOverlay" class="game-overlay gameover-overlay" hidden>
+            <p class="overlay-kicker">مدار فرو ریخت</p><h2 id="finalScore">۰ امتیاز</h2>
+            <p>رتبهٔ این دور: <strong id="finalRank">تازه‌کار</strong>. برای تلاش بعدی آماده‌ای؟</p>
+            <button id="retryButton" class="primary-button compact">دوباره <span>↖</span></button>
+            <span class="shortcut">کلید فاصله را بزن</span>
+          </div>
+          <button id="pulseButton" class="pulse-button" aria-label="آزادکردن موج؛ صفر درصد شارژ"><span id="charge">۰٪</span><small>فاصله</small></button>
+          <div class="shield-meter" aria-label="سه سپر باقی مانده"><i class="active"></i><i class="active"></i><i class="active"></i></div>
+        </div>
+        <div class="game-footer"><span>حرکت <b>WASD / جهت‌ها / کشیدن</b></span><span>موج <b>فاصله / دکمه</b></span><span id="time" class="time">۰۰:۰۰</span></div>
+      </div>
+    </section>
+
+    <section class="brief" id="brief">
+      <div class="section-label"><span>راهنمای میدان</span><span>۰۱—۰۳</span></div>
+      <div class="brief-grid">
+        <article><span class="step-no">۰۱</span><div class="mini-orbit green"></div><h3>هسته‌ها را بگیر</h3><p>هر هستهٔ سبز ۲۵٪ شارژ و ۱۲۰ امتیاز می‌دهد. با چهار هسته موج تو آماده می‌شود.</p></article>
+        <article><span class="step-no">۰۲</span><div class="mini-orbit pink"></div><h3>از تکه‌ها فرار کن</h3><p>تکه‌های مهاجم آخرین موقعیتت را هدف می‌گیرند. مسیرت را عوض کن تا خطا بروند.</p></article>
+        <article><span class="step-no">۰۳</span><div class="mini-orbit cyan"></div><h3>هجوم را بشکن</h3><p>وقتی شارژ کامل شد، موج را آزاد کن. هر تکه‌ای که نابود شود امتیاز اضافه دارد.</p></article>
+      </div>
+    </section>
+
+    <footer><div class="brand footer-brand"><span class="brand-mark">م</span><span>مدارشکن</span></div><p>یک بازی آرکید کوچک برای وب آزاد.</p><a href="#game">بازگشت به میدان ↑</a></footer>
+  </main>
+  <script src="/game.js"></script>
+</body>
+</html>
